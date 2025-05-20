@@ -1,92 +1,92 @@
-import React from "react";
+"use client";
+
 import { motion } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
+import { XCircle } from "lucide-react";
+import kitchenImg from "../assets/kitchen_main.jpg";
 
-import chemicalAnchor from "../assets/cemicalancor.jpg";
-import chemicalRebar from "../assets/cemicalrebar.jpg";
-import coringBeton from "../assets/coringbeton.jpg";
-import pullOutTest from "../assets/pullouttest.jpeg";
-import firestop from "../assets/firestop.jpg";
-import waterproofing from "../assets/waterproofing.png";
-
-const layanan = [
-  {
-    image: chemicalAnchor,
-    title: "Pemasangan Chemical Anchor",
-    desc: "Jasa pemasangan anchor kimia yang kuat dan tahan lama untuk struktur beton.",
-  },
-  {
-    image: chemicalRebar,
-    title: "Rebar Chemical System Hilti",
-    desc: "Layanan rebar chemical untuk sambungan tulangan beton yang kokoh.",
-  },
-  {
-    image: pullOutTest,
-    title: "Tes Tarik (Pull Out Test)",
-    desc: "Pengujian kekuatan tarik anchor atau rebar sesuai standar teknik sipil.",
-  },
-  {
-    image: coringBeton,
-    title: "Coring Beton Presisi",
-    desc: "Pengeboran beton bersih dan presisi tanpa merusak struktur utama.",
-  },
-  {
-    image: firestop,
-    title: "Instalasi Firestop",
-    desc: "Proteksi kebakaran profesional untuk celah antar lantai & dinding.",
-  },
-  {
-    image: waterproofing,
-    title: "Waterproofing Anti Bocor",
-    desc: "Solusi pelapis bangunan tahan air untuk atap, basement, dan dinding.",
-  },
+const problems = [
+  "Tampilan Dapur Terlihat Biasa Saja",
+  "Kurangnya Penyimpanan yang Efisien",
+  "Material Mudah Rusak & Lembap",
+  "Sulit Dibersihkan & Tidak Higienis",
 ];
 
-export default function LayananGrid() {
+export default function ProblemSolution() {
   return (
-    <section className="bg-[#1e3a5f] py-20 px-4 md:px-8 min-h-screen">
-      <motion.h2
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="text-white text-3xl font-bold text-center mb-16"
+    <section className="bg-[#0D2C40] text-white py-16 px-6 md:px-20 flex flex-col md:flex-row items-center">
+      {/* Kiri - Gambar */}
+      <motion.div
+        className="flex flex-col items-center md:w-1/2"
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
       >
-        Layanan Aplikator Hilti & Spesialis Beton
-      </motion.h2>
+        <div className="relative rounded-xl overflow-hidden w-80 h-96 shadow-xl">
+          <img 
+            src={kitchenImg} 
+            alt="Zen Kitchen Set" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute bottom-3 left-3 bg-[#000000aa] text-white px-4 py-2 text-lg font-semibold rounded-md">
+            Zen Kitchen Set
+          </div>
+        </div>
 
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {layanan.map((item, index) => (
+        <div className="flex gap-4 mt-4">
           <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.15 }}
-            className="bg-white/10 backdrop-blur-md rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
+            whileHover={{ scale: 1.1 }}
+            className="w-32 h-20 rounded-xl overflow-hidden shadow-md"
           >
             <img
-              src={item.image}
-              alt={item.title}
-              className="w-full h-56 object-cover rounded-t-xl"
+              src={kitchenImg}
+              alt="Dapur Berantakan"
+              className="w-full h-full object-cover"
             />
-            <div className="p-6">
-              <h3 className="text-white text-xl font-semibold mb-3">{item.title}</h3>
-              <p className="text-gray-300 text-sm leading-relaxed m-0">{item.desc}</p>
-            </div>
+            <div className="bg-black text-white text-sm text-center py-1">Dapur Tidak Rapi</div>
           </motion.div>
-        ))}
-      </div>
 
-      <div className="mt-16 text-center">
-        <a
-          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20tanya%20tentang%20layanan%20aplikator%20Hilti"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-600 transition"
-        >
-          <FaWhatsapp size={24} />
-          Konsultasi via WhatsApp
-        </a>
-      </div>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            className="w-32 h-20 rounded-xl overflow-hidden shadow-md"
+          >
+            <img
+              src={kitchenImg}
+              alt="Kabinet Kusam"
+              className="w-full h-full object-cover"
+            />
+            <div className="bg-black text-white text-sm text-center py-1">Kabinet Kusam</div>
+          </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Kanan - Teks & List */}
+      <motion.div
+        className="md:w-1/2 mt-10 md:mt-0 md:pl-16"
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+      >
+        <h3 className="text-sm font-semibold text-yellow-400 uppercase tracking-wide">Masalah Umum</h3>
+        <h2 className="text-3xl font-bold mt-2 text-white">Dapur Lama Membuat Tidak Nyaman?</h2>
+        <p className="text-gray-300 mt-4 leading-relaxed">
+          Banyak orang merasa dapur mereka tidak mencerminkan gaya hidup modern. Berikut beberapa masalah umum yang sering dialami:
+        </p>
+
+        <ul className="mt-6 space-y-4">
+          {problems.map((problem, index) => (
+            <motion.li
+              key={index}
+              className="flex items-center gap-3 text-lg font-medium"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: index * 0.2 }}
+            >
+              <XCircle size={24} className="text-yellow-500" />
+              {problem}
+            </motion.li>
+          ))}
+        </ul>
+      </motion.div>
     </section>
   );
 }

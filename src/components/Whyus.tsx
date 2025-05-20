@@ -3,93 +3,73 @@ import { CheckCircle } from "lucide-react";
 
 const features = [
   {
-    title: "Solusi Fixing yang Kuat & Tahan Lama",
-    desc: "Kami menggunakan sistem sambungan dan pemasangan dari HILTI yang terbukti kokoh, presisi, dan memiliki daya tahan tinggi di berbagai kondisi konstruksi."
+    title: "Desain Elegan",
+    desc: "Zen Kitchen Set hadir dengan desain minimalis dan estetika modern yang cocok untuk berbagai gaya interior.",
   },
   {
-    title: "Tim Aplikator Bersertifikat",
-    desc: "Seluruh teknisi kami telah mengikuti pelatihan resmi dari HILTI, menjamin hasil kerja sesuai standar global dalam keamanan dan performa."
+    title: "Custom Sesuai Kebutuhan",
+    desc: "Dapat disesuaikan dengan ukuran ruang dapur dan preferensi Anda secara fleksibel.",
   },
   {
-    title: "Support Engineering Langsung",
-    desc: "Kami didukung oleh tim engineer HILTI untuk memastikan perencanaan dan eksekusi teknis di lapangan sesuai spesifikasi terbaik."
+    title: "Material Premium",
+    desc: "Menggunakan bahan berkualitas tinggi seperti plywood anti air dan finishing HPL yang tahan lama.",
   },
   {
-    title: "Efisiensi Waktu & Biaya Proyek",
-    desc: "Dengan sistem HILTI yang praktis dan cepat dalam pemasangan, kami membantu menghemat waktu kerja serta meminimalkan pemborosan material."
+    title: "Harga Terjangkau",
+    desc: "Solusi dapur impian dengan harga yang kompetitif tanpa mengorbankan kualitas.",
   },
   {
-    title: "Layanan Site Visit Gratis",
-    desc: "Kami siap melakukan kunjungan ke lokasi proyek tanpa biaya untuk mengevaluasi kebutuhan teknis sebelum proses pemasangan dimulai."
+    title: "Tim Profesional",
+    desc: "Didukung oleh tim berpengalaman dalam desain dan pemasangan kitchen set.",
   },
   {
-    title: "Aman untuk Struktur Bangunan",
-    desc: "Teknologi HILTI mengutamakan keamanan dan tidak merusak struktur asli bangunan, cocok untuk proyek retrofit maupun bangunan baru."
+    title: "Proses Cepat & Rapi",
+    desc: "Mulai dari desain hingga instalasi, semua dilakukan secara presisi dan tepat waktu.",
   },
   {
-    title: "Didukung Produk Original HILTI",
-    desc: "Kami hanya menggunakan produk asli HILTI mulai dari anchor, fastener, hingga sistem pemotongan dan pengeboran."
+    title: "Garansi Pengerjaan",
+    desc: "Setiap proyek dilindungi oleh garansi untuk memberikan Anda ketenangan.",
   },
   {
-    title: "Pelayanan Profesional & Tepat Waktu",
-    desc: "Setiap pekerjaan dilakukan dengan jadwal yang jelas, koordinasi yang rapi, dan komunikasi yang profesional."
-  },
-  {
-    title: "Laporan & Dokumentasi Lengkap",
-    desc: "Setiap proyek disertai dengan dokumentasi teknis, foto progress, dan laporan akhir untuk kejelasan pertanggungjawaban."
-  },
-  {
-    title: "Garansi Kualitas Pekerjaan",
-    desc: "Kami memberikan garansi terhadap hasil pemasangan sesuai ketentuan teknis dari HILTI dan standar keselamatan proyek."
+    title: "Free Konsultasi",
+    desc: "Diskusikan kebutuhan dapur Anda secara gratis bersama tim desainer kami.",
   },
 ];
 
-const titleVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: "easeOut" }
-  }
-};
-
-export default function WhyUs() {
+export default function WhyUsZenKitchen() {
   return (
-    <section className="bg-[#1e3a5f] py-16 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Judul Section */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-          variants={titleVariants}
-          className="text-center"
-        >
-          <h3 className="text-orange-400 text-sm font-semibold uppercase tracking-widest">
-            Keunggulan Kami
-          </h3>
-          <h2 className="text-4xl font-bold text-white mt-2">
-            Kenapa memilih kami sebagai aplikator HILTI?
-          </h2>
-        </motion.div>
+    <section className="bg-white py-20 px-6 md:px-20">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="text-center"
+      >
+        <h3 className="text-orange-400 text-sm font-semibold uppercase tracking-widest">Kenapa Memilih Kami?</h3>
+        <h2 className="text-4xl font-bold text-gray-800 mt-2">Zen Kitchen Set, Lebih dari Sekadar Dapur</h2>
+        <p className="text-gray-600 mt-3 max-w-2xl mx-auto">
+          Kami hadir untuk memberikan solusi dapur modern yang indah, fungsional, dan tahan lama.
+        </p>
+      </motion.div>
 
-        {/* Grid Keunggulan */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-4 bg-[#2a4468] p-5 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 border border-[#3b587f]"
-            >
-              <div className="text-orange-400 flex-shrink-0">
-                <CheckCircle size={32} />
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-white">{feature.title}</h3>
-                <p className="text-gray-300">{feature.desc}</p>
-              </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl shadow-sm hover:shadow-md transition duration-300"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: index * 0.1 }}
+          >
+            <div className="text-green-500 mt-1">
+              <CheckCircle size={28} />
             </div>
-          ))}
-        </div>
+            <div>
+              <h3 className="text-xl font-semibold text-gray-800">{feature.title}</h3>
+              <p className="text-gray-600 text-sm mt-1">{feature.desc}</p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
