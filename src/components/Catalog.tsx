@@ -54,7 +54,7 @@ export default function Newproject() {
 
   return (
     <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Proyek Terbaru</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-10">Proyek Terbaru banget</h2>
 
       <div className="columns-2 md:columns-3 gap-4 space-y-4">
         {images.map((src, index) => (
