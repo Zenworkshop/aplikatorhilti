@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-white shadow-md">
       {/* BAGIAN ATAS */}
-      <div className="hidden md:flex justify-between items-center bg-[#0D2C40] text-white px-8 py-2 text-sm">
+      <div className="hidden md:flex justify-between items-center bg-[#000000] text-white px-8 py-2 text-sm">
         <div className="flex items-center space-x-6">
           <div className="flex items-center space-x-2">
             <MdAccessTime />

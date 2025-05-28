@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 import { Users, LayoutGrid, ThumbsUp } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-import pengalamanImg from "../assets/logo_zen_kitchenset.png";
+import pengalamanImg from "../assets/HILTI/ca8.png";
 
 export default function Welcome() {
   const stats = [
@@ -66,7 +66,7 @@ export default function Welcome() {
           </motion.div>
 
           <motion.div
-            className="absolute bottom-0 right-4 md:right-12 bg-[#0D2C40] text-white p-4 rounded-lg shadow-md"
+            className="absolute bottom-0 right-4 md:right-12 bg-[#ba1322] text-white p-4 rounded-lg shadow-md"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

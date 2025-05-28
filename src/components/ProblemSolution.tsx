@@ -44,7 +44,7 @@ const layanan = [
 
 export default function LayananGrid() {
   return (
-    <section className="bg-[#1e3a5f] py-20 px-4 md:px-8 min-h-screen">
+    <section className="bg-[#ba1322] py-20 px-4 md:px-8 min-h-screen">
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -77,16 +77,22 @@ export default function LayananGrid() {
       </div>
 
       <div className="mt-16 text-center">
-        <a
-          href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20tanya%20tentang%20layanan%20aplikator%20Hilti"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-3 bg-green-500 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-600 transition"
-        >
-          <FaWhatsapp size={24} />
-          Konsultasi via WhatsApp
-        </a>
-      </div>
+              <a
+                href="https://wa.me/6281234567890?text=Halo%20saya%20ingin%20tanya%20tentang%20layanan%20aplikator%20Hilti"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  inline-flex items-center gap-3
+                  bg-white text-[#ba1322] px-8 py-4 rounded-full
+                  text-lg font-semibold border border-white
+                  hover:bg-[#e64a4a] hover:text-white
+                  transition shadow-lg cursor-pointer
+                "
+              >
+                <FaWhatsapp size={24} />
+                Konsultasi via whatsapp
+              </a>
+            </div>
     </section>
   );
 }
