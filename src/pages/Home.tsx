@@ -7,8 +7,10 @@ import WhyUs from '../components/Whyus';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
 import SocialButtons from '../components/SocialButtons';
-import SolutionSection from '../components/SolutionSection';
 import OrderSection from '../components/OrderSection';
+import Client from '../components/Client';
+import PriceServices from '../components/PriceServices';
+import Faq from '../components/Faq';
 
 export default function Home() {
   return (
@@ -16,11 +18,13 @@ export default function Home() {
       <HomeCarousel />
       <Welcome />
       <ProblemSolution />
-      <SolutionSection />
+      <Client />
+      <PriceServices />
       <Catalog />
       <WhyUs />
       <OrderSection />
       <Testimonials />
+      <Faq />
       <Footer />
       <SocialButtons />
     </div>

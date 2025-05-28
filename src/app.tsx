@@ -6,6 +6,7 @@ import About from './pages/About';
 import ServicesPage from './pages/ServicesPage';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
+import LayananHilti from './pages/LayananHilti';
 import SocialButtons from './components/SocialButtons';
 import ReactPixel from 'react-facebook-pixel';
 
@@ -31,6 +32,7 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/layanan-hilti" element={<LayananHilti />} />
         </Routes>
         <SocialButtons />
       </div>

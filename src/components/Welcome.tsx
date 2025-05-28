@@ -1,28 +1,26 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 import { Users, LayoutGrid, ThumbsUp } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 
-import kitchenIcon from '../assets/logo_zen_kitchenset.png';
-import cupboardIcon from '../assets/logo_zen_kitchenset.png';
-import countertopIcon from '../assets/logo_zen_kitchenset.png';
 import pengalamanImg from "../assets/logo_zen_kitchenset.png";
 
 export default function Welcome() {
   const stats = [
     {
       icon: <Users size={48} className="text-blue-500" />,
-      value: "25+",
+      value: 25,
       label: "Professional Team",
     },
     {
       icon: <LayoutGrid size={48} className="text-blue-500" />,
-      value: "906+",
+      value: 906,
       label: "Projects Completed",
     },
     {
       icon: <ThumbsUp size={48} className="text-blue-500" />,
-      value: "504+",
+      value: 504,
       label: "Satisfied Customer",
     },
   ];
@@ -32,34 +30,16 @@ export default function Welcome() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
   };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const serviceItem = {
-    hidden: { opacity: 0, x: -20 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 12
-      }
-    }
+      transition: { staggerChildren: 0.2 },
+    },
   };
 
   return (
@@ -97,7 +77,7 @@ export default function Welcome() {
               damping: 15
             }}
           >
-            <div className="text-4xl font-bold">6<sup>+</sup></div>
+            <div className="text-4xl font-bold">15<sup>+</sup></div>
             <div className="text-sm md:text-base">Tahun Pengalaman</div>
           </motion.div>
         </motion.div>
@@ -115,73 +95,47 @@ export default function Welcome() {
               variants={fadeIn}
               className="text-3xl md:text-4xl font-bold mb-6"
             >
-              Zen Workshop
+              Aplikator Hilti
             </motion.h2>
 
             <motion.p
               variants={fadeIn}
               className="text-gray-600 mb-8"
             >
-              Zen Workshop adalah penyedia jasa pembuatan kitchen set aluminium dan furniture custom bergaya minimalis modern, dengan desain elegan, harga kompetitif, dan kualitas terbaik. <strong>Kami melayani pembuatan kitchen set anti rayap, lemari aluminium, serta berbagai interior rumah yang fungsional dan estetik,</strong> untuk menciptakan hunian yang nyaman dan tahan lama.
+              Aplikator Hilti adalah aplikator resmi Hilti terpercaya yang berpengalaman lebih dari 10 tahun dalam jasa coring beton dan pemasangan anchor untuk kebutuhan konstruksi. Kami menggunakan <strong>alat dan teknologi Hilti terbaru untuk memastikan hasil kerja yang presisi, kuat, dan sesuai standar keselamatan proyek. </strong> Cocok untuk proyek gedung, infrastruktur, maupun renovasi teknik sipil.
             </motion.p>
 
-            {/* Services */}
-            <motion.div
-              className="grid grid-cols-1 md:grid-cols-2 gap-6"
-              variants={staggerContainer}
+            <a
+              href="https://wa.me/6281234567890" // Ganti dengan nomor WA kamu
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-2xl shadow-md transition"
             >
-              <motion.div className="flex items-start" variants={serviceItem}>
-                <div className="mr-4 border p-2 rounded">
-                  <img src={kitchenIcon} alt="Kitchen Icon" className="w-16 h-16" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Kitchen Set Custom</h3>
-                  <p className="text-sm text-gray-600">
-                    Kami menyediakan kitchen set custom sesuai dengan desain dan kebutuhan Anda.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div className="flex items-start" variants={serviceItem}>
-                <div className="mr-4 border p-2 rounded">
-                  <img src={cupboardIcon} alt="Cupboard Icon" className="w-16 h-16" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Lemari Dapur</h3>
-                  <p className="text-sm text-gray-600">
-                    Kami membuat lemari dapur dengan desain yang fungsional dan modern.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div className="flex items-start" variants={serviceItem}>
-                <div className="mr-4 border p-2 rounded">
-                  <img src={countertopIcon} alt="Countertop Icon" className="w-16 h-16" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Countertop</h3>
-                  <p className="text-sm text-gray-600">
-                    Kami menyediakan berbagai jenis countertop berkualitas untuk dapur Anda.
-                  </p>
-                </div>
-              </motion.div>
-
-              <motion.div className="flex items-start" variants={serviceItem}>
-                <div className="mr-4 border p-2 rounded">
-                  <img src={kitchenIcon} alt="Kitchen Icon" className="w-16 h-16" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-lg mb-1">Desain Dapur</h3>
-                  <p className="text-sm text-gray-600">
-                    Kami membantu Anda merancang dapur impian dengan desain yang sesuai kebutuhan.
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-
+              <FaWhatsapp size={20} />
+              Konsultasikan Sekarang
+            </a>
           </motion.div>
         </div>
       </div>
+
+      {/* Statistik */}
+      <motion.div
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mt-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
+        {stats.map((stat, index) => (
+          <motion.div key={index} variants={fadeIn}>
+            <div className="flex justify-center mb-2">{stat.icon}</div>
+            <h2 className="text-4xl font-bold text-blue-600">
+              <CountUp end={stat.value} duration={2.5} />+
+            </h2>
+            <p className="mt-2 text-gray-700">{stat.label}</p>
+          </motion.div>
+        ))}
+      </motion.div>
     </section>
   );
 }

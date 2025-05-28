@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4">Zen Kitchen Set</h3>
+            <h3 className="text-2xl font-bold mb-4">Aplikator Hilti</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
-              Solusi desain dan pemasangan kitchen set custom yang elegan, fungsional, dan sesuai dengan kebutuhan rumah Anda.
+              Spesialis jasa coring beton, pemasangan anchor, dan pemotongan struktur menggunakan alat Hilti. Akurasi tinggi, aman, dan sesuai standar proyek konstruksi profesional.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-2" />
-                zenkitchensetid@gmail.com
+                aplikatorhilti@gmail.com
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-2 mt-1 flex-shrink-0" />
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-6 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Zen Kitchen Set. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Aplikator Hilti. All rights reserved.</p>
         </div>
       </div>
     </footer>
