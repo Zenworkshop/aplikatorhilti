@@ -15,17 +15,17 @@ export default function FAQHilti() {
         "Aplikator Hilti bertugas menggunakan peralatan Hilti untuk instalasi, pengikatan, pemotongan, dan pengeboran sesuai standar teknis dan keamanan di lapangan.",
     },
     {
-      question: "Bagaimana cara memilih alat Hilti yang tepat untuk pekerjaan aplikator?",
+      question: "Bagaimana cara memilih alat Hilti yang tepat?",
       answer:
         "Pilih alat berdasarkan jenis pekerjaan dan material yang akan dikerjakan, serta pastikan alat tersebut memiliki sertifikasi dan fitur keamanan lengkap.",
     },
     {
-      question: "Apa tips agar penggunaan alat Hilti di lapangan lebih efisien dan aman?",
+      question: "Apa tips agar penggunaan alat lebih efisien dan aman?",
       answer:
         "Gunakan APD lengkap, lakukan perawatan rutin alat, ikuti SOP penggunaan, dan selalu cek kondisi alat sebelum dan sesudah digunakan.",
     },
     {
-      question: "Bagaimana aplikator Hilti mengatasi kendala teknis saat bekerja?",
+      question: "Bagaimana aplikator Hilti mengatasi kendala teknis?",
       answer:
         "Aplikator dapat menghubungi support teknis Hilti, mengikuti pelatihan resmi, dan menggunakan manual produk untuk solusi dan troubleshooting cepat.",
     },
