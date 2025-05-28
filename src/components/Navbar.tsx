@@ -69,12 +69,12 @@ export default function Navbar() {
               </div>
               <div className="absolute hidden group-hover:block top-full left-0 bg-[#f9f9f9] shadow-lg rounded-lg py-2 w-48 z-50">
                 <div className="absolute h-2 w-full top-[-8px]"></div>
-                <Link to="/layanan-hilti" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Chemical Anchor</Link>
-                <Link to="/sliding-door" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Chemical Rebar</Link>
-                <Link to="/partisi-kaca" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Tes Tarik (Pull Out Test)</Link>
-                <Link to="/pintulipat-aluminium" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Coring Lantai dan Dinding Beton</Link>
-                <Link to="/pintu-floorhinge" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Firestop</Link>
-                <Link to="/kanopi-kaca" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Waterproofing</Link>
+                <Link to="/chemical-anchor" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Chemical Anchor</Link>
+                <Link to="/chemical-rebar" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Chemical Rebar</Link>
+                <Link to="/pull-out-test" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Tes Tarik (Pull Out Test)</Link>
+                <Link to="/coring-lantai" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Coring Lantai dan Dinding Beton</Link>
+                <Link to="/fire-stop" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Firestop</Link>
+                <Link to="/water-proofing" className="block px-4 py-2 text-gray-900 hover:bg-gray-200">Jasa Waterproofing</Link>
               </div>
             </div>
 

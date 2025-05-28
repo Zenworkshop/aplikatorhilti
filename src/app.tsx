@@ -6,7 +6,12 @@ import About from './pages/About';
 import ServicesPage from './pages/ServicesPage';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
-import LayananHilti from './pages/LayananHilti';
+import ChemicalAnchor from "./pages/ChemicalAnchor";
+import ChemicalRebar from "./pages/ChemicalRebar";
+import PullOut from "./pages/PullOut";
+import CoringLantai from "./pages/CoringLantai";
+import FireStop from "./pages/FireStop";
+import WaterProofing from "./pages/WaterProofing";
 import SocialButtons from './components/SocialButtons';
 import ReactPixel from 'react-facebook-pixel';
 
@@ -32,7 +37,20 @@ function App() {
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/layanan-hilti" element={<LayananHilti />} />
+          <Route path="/chemical-anchor" element={<ChemicalAnchor />} />
+          <Route path="/chemical-rebar" element={<ChemicalRebar />} />
+          <Route path="/pull-out-test" element={<PullOut />} />
+          <Route path="/coring-lantai" element={<CoringLantai />} />
+          <Route path="/fire-stop" element={<FireStop />} />
+          <Route path="/water-proofing" element={<WaterProofing />} />
+
+
+
+
+
+
+
+    
         </Routes>
         <SocialButtons />
       </div>
