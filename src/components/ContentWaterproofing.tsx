@@ -439,7 +439,7 @@ export default function ContentWaterproofing() {
             className="max-w-2xl mx-auto"
         >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Butuh Solusi Waterproofing ngga?
+            Butuh Solusi Waterproofing sekarang?
             </h2>
             <p className="text-lg md:text-xl mb-8">
             Kami siap bantu dari survei hingga garansi. Konsultasi gratis & bisa langsung booking jadwal pengerjaan!
