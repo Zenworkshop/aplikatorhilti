@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import ServicesPage from './pages/ServicesPage';
-import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import ChemicalAnchor from "./pages/ChemicalAnchor";
 import ChemicalRebar from "./pages/ChemicalRebar";
@@ -35,7 +34,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<ServicesPage />} />
-          <Route path="/gallery" element={<Gallery />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/chemical-anchor" element={<ChemicalAnchor />} />
           <Route path="/chemical-rebar" element={<ChemicalRebar />} />
