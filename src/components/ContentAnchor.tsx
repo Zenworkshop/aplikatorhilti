@@ -19,6 +19,8 @@ import proyek12 from "../assets/HILTI/ca12.png";
 import proyek13 from "../assets/HILTI/ca13.png";
 import proyek14 from "../assets/HILTI/ca14.png";
 import proyek15 from "../assets/HILTI/ca15.png";
+import hiltiImg from "../assets/HILTI/ca5.png";
+
 
 declare const fbq: any;
 declare const gtag_report_conversion: any;
@@ -59,39 +61,37 @@ export default function ContentAnchor() {
   return (
     <>
       {/* HERO SECTION */}
-      <motion.section
-        className="bg-gradient-to-br from-[#0D2C40] to-[#1A4365] text-white py-28 px-6 md:px-12 text-center"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={{
-          hidden: { opacity: 0, y: 30 },
-          visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-        }}
-      >
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Jasa Pemasangan Chemical Anchor Profesional
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 mb-8">
-            Butuh solusi kuat dan tahan lama untuk struktur beton Anda? Kami menyediakan layanan
-            pemasangan <strong>chemical anchor</strong> berkualitas untuk proyek bangunan, mesin industri,
-            dan struktur berat lainnya. Cocok untuk pembangunan gedung, pabrik, hingga infrastruktur.
-          </p>
-          <a
-            href="https://wa.me/6281244997748"
-            onClick={() => {
-              fbq("track", "Contact");
-              return gtag_report_conversion("https://wa.me/6281244997748");
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg transition"
-          >
-            <FaWhatsapp size={24} /> Konsultasi via WhatsApp
-          </a>
-        </div>
-      </motion.section>
+        <motion.section
+          className="bg-[#ba1322] text-white py-28 px-6 md:px-12 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          }}
+        >
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Jasa Pemasangan Chemical Anchor Profesional
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8">
+              Butuh solusi kuat dan tahan lama untuk struktur beton Anda? Kami menyediakan layanan
+              pemasangan <strong>chemical anchor</strong> berkualitas untuk proyek bangunan, mesin industri,
+              dan struktur berat lainnya. Cocok untuk pembangunan gedung, pabrik, hingga infrastruktur.
+            </p>
+            <a
+              href="https://wa.me/6281244997748?text=Halo%20saya%20tertarik%20dengan%20jasa%20chemical%20anchor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white text-[#ba1322] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#e64a4a] hover:text-white transition shadow-lg"
+            >
+              <FaWhatsapp size={24} />
+              Konsultasi via WhatsApp
+            </a>
+          </div>
+        </motion.section>
+
 
       {/* SECTION 2: Kenapa Harus Pakai Chemical Anchor? */}
       <section className="bg-white py-24 px-4 md:px-8 text-gray-900">
@@ -160,7 +160,7 @@ export default function ContentAnchor() {
       </section>
 
       {/* SECTION 3: Jenis Aplikasi Chemical Anchor */}
-      <section className="bg-gray-100 py-24 px-4 md:px-8 text-gray-900">
+      <section className="bg-[#ba1322] py-24 px-4 md:px-8 text-white">
         <div className="max-w-6xl mx-auto text-center">
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-10"
@@ -171,65 +171,141 @@ export default function ContentAnchor() {
           >
             Jenis Aplikasi Chemical Anchor
           </motion.h2>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
-              "Struktur Baja",
-              "Pabrik & Gudang Industri",
-              "Mesin Berat",
-              "Railing Tangga & Balkon",
-              "Instalasi AC dan HVAC",
-              "Tiang Listrik & Antena",
+              {
+                title: "Struktur Baja",
+                desc: "Menjamin sambungan kuat antara struktur baja dan beton untuk konstruksi berat.",
+              },
+              {
+                title: "Pabrik & Gudang Industri",
+                desc: "Solusi andal untuk instalasi mesin, rak berat, dan konstruksi dalam area industri.",
+              },
+              {
+                title: "Mesin Berat",
+                desc: "Menahan beban tinggi dari mesin industri dengan daya rekat kimia unggul.",
+              },
+              {
+                title: "Railing Tangga & Balkon",
+                desc: "Menjaga keamanan railing dengan sistem penanaman anchor yang kuat dan tahan lama.",
+              },
+              {
+                title: "Instalasi AC dan HVAC",
+                desc: "Memastikan unit HVAC dan AC menempel kuat tanpa merusak struktur beton.",
+              },
+              {
+                title: "Tiang Listrik & Antena",
+                desc: "Menanam tiang di beton agar tetap stabil dan tahan guncangan serta cuaca.",
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
-                className="bg-white p-6 rounded-xl shadow hover:shadow-md transition border"
+                className="bg-white/10 backdrop-blur-md p-6 rounded-xl shadow hover:shadow-md transition"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <h3 className="text-xl font-semibold text-[#0D2C40]">{item}</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-16 text-center">
+            <a
+              href="https://wa.me/6281244997748?text=Halo%20saya%20ingin%20konsultasi%20tentang%20chemical%20anchor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white text-[#ba1322] px-8 py-4 rounded-full text-lg font-semibold hover:bg-[#e64a4a] hover:text-white transition shadow-lg"
+            >
+              <FaWhatsapp size={24} />
+              Konsultasi Chemical Anchor
+            </a>
           </div>
         </div>
       </section>
 
+
+
     {/* SECTION 4: Langkah Kerja Kami */}
-        <section className="bg-white py-24 px-4 md:px-8 text-gray-900">
+      <section className="bg-white text-gray-900 py-24 px-4 md:px-8">
         <div className="max-w-6xl mx-auto text-center">
-            <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            >
+          <h2 className="text-4xl md:text-5xl font-bold mb-12">
             Langkah Kerja Kami
-            </motion.h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
-            {[
-                { title: "Survey Lokasi", emoji: "📍" },
-                { title: "Evaluasi Struktur", emoji: "📐" },
-                { title: "Pengeboran Presisi", emoji: "🛠️" },
-                { title: "Injeksi Chemical", emoji: "🧪" },
-                { title: "Tes Tarik / Uji Kuat", emoji: "📊" },
-            ].map((step, index) => (
-                <motion.div
-                key={index}
-                className="bg-gray-100 p-6 rounded-xl shadow-sm text-center hover:shadow-md transition"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 items-stretch text-left">
+            {/* KIRI: Gambar + Penjelasan */}
+            <div className="flex flex-col justify-between">
+              <img
+                src={hiltiImg}
+                alt="Langkah kerja chemical anchor"
+                className="rounded-lg shadow-lg w-full h-full object-cover mb-6 max-h-[480px]"
+              />
+              <p className="text-gray-700 leading-relaxed mb-4">
+                Proses pemasangan <strong>chemical anchor</strong> kami dilakukan secara sistematis dan profesional. Berikut langkah-langkah yang akan Anda dapatkan saat menggunakan layanan dari tim aplikator resmi kami.
+              </p>
+              <div className="flex justify-start">
+                <a
+                  href="https://wa.me/6281244997748"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-green-600 text-white px-6 py-3 rounded-lg text-base font-semibold transition"
                 >
-                <div className="text-4xl mb-4">{step.emoji}</div>
-                <h3 className="text-lg font-semibold">{step.title}</h3>
-                </motion.div>
-            ))}
+                  <FaWhatsapp size={20} className="mb-[1px]" />
+                  Konsultasi Sekarang
+                </a>
+              </div>
             </div>
+
+            {/* KANAN: Langkah-langkah */}
+            <div className="grid gap-6 self-stretch">
+              {[
+                {
+                  id: "01",
+                  title: "Survey Lokasi 📍",
+                  desc: "Tim kami mengunjungi lokasi proyek untuk memahami kondisi lapangan secara langsung sebelum pengerjaan dimulai.",
+                },
+                {
+                  id: "02",
+                  title: "Evaluasi Struktur 📐",
+                  desc: "Struktur bangunan diperiksa agar metode pemasangan anchor sesuai standar kekuatan dan keamanan.",
+                },
+                {
+                  id: "03",
+                  title: "Pengeboran Presisi 🛠️",
+                  desc: "Lubang dibuat secara akurat menggunakan alat coring untuk menjamin posisi dan kekuatan sambungan.",
+                },
+                {
+                  id: "04",
+                  title: "Injeksi Chemical 🧪",
+                  desc: "Anchor ditanam menggunakan bahan kimia khusus yang memberikan daya rekat maksimal ke dalam beton.",
+                },
+                {
+                  id: "05",
+                  title: "Tes Tarik / Uji Kuat 📊",
+                  desc: "Kami melakukan pull-out test untuk memastikan setiap titik pemasangan sesuai dengan spesifikasi teknis.",
+                },
+              ].map((step) => (
+                <motion.div
+                  key={step.id}
+                  whileHover={{ scale: 1.03, y: -4 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                  className="bg-gray-100 text-gray-900 border border-gray-200 rounded-xl p-5 shadow-sm"
+                >
+                  <h3 className="text-xl font-semibold flex items-center gap-3">
+                    <span className="bg-[#0D2C40] text-white font-bold px-3 py-1 rounded-full">{step.id}</span>
+                    {step.title}
+                  </h3>
+                  <p className="mt-2 text-gray-700">{step.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
         </div>
-        </section>
+      </section>
 
         {/* SECTION 5: Proyek Terbaru */}
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
@@ -258,60 +334,69 @@ export default function ContentAnchor() {
         </div>
       </section>
 
-      {/* SECTION 6: Testimoni Klien / Rating */}
-        <section className="bg-gray-100 py-24 px-4 md:px-8 text-gray-900">
+              {/* SECTION 6: Testimoni Klien / Rating */}
+      <section className="bg-[#ba1322] py-24 px-4 md:px-8 text-white">
         <div className="max-w-6xl mx-auto text-center">
-            <motion.h2
+          <motion.h2
             className="text-4xl md:text-5xl font-bold mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            >
+          >
             Apa Kata Klien Kami?
-            </motion.h2>
+          </motion.h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-                {
+              {
                 name: "PT Bangun Mandiri",
                 text: "Pelayanan sangat profesional. Chemical anchor dipasang dengan rapi dan hasilnya kuat sekali. Rekomendasi banget untuk proyek skala besar.",
-                rating: 5,
-                },
-                {
+              },
+              {
                 name: "CV Teknik Utama",
                 text: "Timnya responsif dan pengerjaan cepat. Hasil uji tarik sesuai dengan standar proyek. Kualitas alat dan materialnya juga premium.",
-                rating: 4,
-                },
-                {
+              },
+              {
                 name: "Industri Baja Abadi",
                 text: "Kami sangat puas dengan hasil kerjanya. Proyek pabrik kami berjalan lancar berkat pemasangan anchor yang kuat dan tepat.",
-                rating: 5,
-                },
+              },
             ].map((review, index) => (
-                <motion.div
+              <motion.div
                 key={index}
-                className="bg-white rounded-xl shadow p-6 text-left hover:shadow-md transition"
+                className="bg-white/10 backdrop-blur-md rounded-xl shadow p-6 text-left hover:shadow-md transition"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                >
+              >
                 <div className="mb-4">
-                    {Array.from({ length: review.rating }).map((_, i) => (
-                    <span key={i} className="text-yellow-400 text-xl">★</span>
-                    ))}
-                    {Array.from({ length: 5 - review.rating }).map((_, i) => (
-                    <span key={i} className="text-gray-300 text-xl">★</span>
-                    ))}
+                  {Array.from({ length: 5 }).map((_, i) => (
+                    <span key={i} className="text-white text-xl">★</span>
+                  ))}
                 </div>
-                <p className="text-gray-700 italic mb-4">"{review.text}"</p>
-                <h3 className="text-md font-semibold text-[#0D2C40]">{review.name}</h3>
-                </motion.div>
+                <p className="text-white/90 italic mb-4">"{review.text}"</p>
+                <h3 className="text-md font-semibold text-white">{review.name}</h3>
+              </motion.div>
             ))}
-            </div>
+          </div>
+
+          {/* CTA Button */}
+          <div className="mt-12">
+            <a
+              href="https://wa.me/6281244997748?text=Halo%20saya%20ingin%20konsultasi%20terkait%20pemasangan%20chemical%20anchor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white text-[#ba1322] hover:bg-[#e64a4a] hover:text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition"
+            >
+              Lihat Proyek & Konsultasi
+            </a>
+          </div>
         </div>
-        </section>
+      </section>
+
+
+
 
         {/* SECTION 7: FAQ Chemical Anchor */}
         <section className="bg-white py-24 px-4 md:px-8 text-gray-900">
@@ -362,40 +447,30 @@ export default function ContentAnchor() {
         </section>
 
         {/* SECTION 8: CTA Akhir */}
-        <section className="bg-gradient-to-br from-[#0D2C40] to-[#1A4365] text-white py-24 px-4 md:px-8 text-center">
-        <motion.div
+        <section className="bg-[#ba1322] text-white py-24 px-4 md:px-8 text-center">
+          <motion.div
             className="max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-        >
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Siap Pasang Chemical Anchor Berkualitas?
+              Siap Pasang Chemical Anchor Berkualitas?
             </h2>
-            <p className="text-lg md:text-xl mb-8 text-white/90">
-            Konsultasi gratis, survei lokasi tanpa biaya (jika dalam area layanan), dan dapatkan hasil pengerjaan yang rapi, kuat, dan bersertifikat!
+            <p className="text-lg md:text-xl mb-10 text-white/90">
+              Konsultasi gratis, survei lokasi tanpa biaya (jika dalam area layanan), dan dapatkan hasil pengerjaan yang rapi, kuat, dan bersertifikat!
             </p>
             <a
-            href="https://wa.me/6281244997748"
-            onClick={() => {
-                fbq("track", "Contact");
-                return gtag_report_conversion("https://wa.me/6281244997748");
-            }}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center justify-center gap-3 bg-[#25D366] hover:bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg transition"
+              href="https://wa.me/6281244997748?text=Halo%20saya%20ingin%20pasang%20chemical%20anchor%20dengan%20aplikator%20resmi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 bg-white text-[#ba1322] hover:bg-[#e64a4a] hover:text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition"
             >
-            <FaWhatsapp size={24} /> Konsultasi Sekarang
+              <FaWhatsapp size={24} /> Konsultasi Sekarang
             </a>
-        </motion.div>
+          </motion.div>
         </section>
-
-
-
-
-
-
 
     </>
   );

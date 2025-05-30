@@ -10,10 +10,11 @@ import {
   FaFileAlt,
   FaUserTie,
   FaCheckCircle,
-  FaTools
+  FaTools,
+  FaShieldAlt
 } from "react-icons/fa";
 
-import firestopImage from "../assets/HILTI/ca3.png";
+import firestopImage from "../assets/HILTI/ca5.png";
 import proyek1 from "../assets/HILTI/ca1.png";
 import proyek2 from "../assets/HILTI/ca2.png";
 import proyek3 from "../assets/HILTI/ca3.png";
@@ -29,6 +30,8 @@ import proyek12 from "../assets/HILTI/ca12.png";
 import proyek13 from "../assets/HILTI/ca13.png";
 import proyek14 from "../assets/HILTI/ca14.png";
 import proyek15 from "../assets/HILTI/ca15.png";
+import hiltiImg from "../assets/HILTI/ca5.png";
+import alatImages from "../assets/HILTI/ca3.png";
 
 const images = [
   proyek1, proyek2, proyek3, proyek4, proyek5,
@@ -59,43 +62,39 @@ export default function ContentFirestop() {
 
   return (
     <>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-red-700 to-red-900 text-white py-20 px-4 md:px-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+      {/* SECTION 1: HERO - Jasa Firestop */}
+        <motion.section
+          className="bg-[#ba1322] text-white py-28 px-6 md:px-12 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Jasa Pemasangan Firestop Profesional & Bersertifikat
-          </h1>
-          <p className="text-lg md:text-xl mb-6">
-            Cegah penyebaran api & asap. Lindungi proyek Anda dari awal.
-          </p>
-          <a
-            href="https://wa.me/6281244997748?text=Halo%20Zen%20Workshop,%20saya%20ingin%20konsultasi%20tentang%20layanan%20firestop."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-[#25D366] hover:bg-green-600 text-white rounded-xl shadow-lg text-lg font-semibold transition"
-          >
-            <FaWhatsapp size={24} />
-            Konsultasi Sekarang
-          </a>
-        </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Jasa Firestop Profesional & Bersertifikat
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8">
+              Layanan pemasangan firestop untuk proteksi kebakaran pada celah pipa, kabel, dan ducting di dinding atau lantai bangunan. Mencegah penyebaran api & asap sesuai standar keselamatan proyek.
+            </p>
+            <a
+              href="https://wa.me/6281244997748?text=Halo%20saya%20tertarik%20dengan%20jasa%20firestop%20untuk%20proyek%20bangunan"
+              onClick={() => {
+                fbq("track", "Contact");
+                return gtag_report_conversion("https://wa.me/6281244997748");
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-white text-[#ba1322] hover:bg-[#e64a4a] hover:text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition"
+            >
+              <FaWhatsapp size={24} /> Konsultasi Gratis via WhatsApp
+            </a>
+          </div>
+        </motion.section>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="rounded-2xl overflow-hidden shadow-xl"
-        >
-          <img
-            src={firestopImage}
-            alt="Ilustrasi Firestop"
-            className="w-full h-auto object-cover"
-          />
-        </motion.div>
-      </section>
 
       {/* Section 2: Apa Itu Firestop dan Kenapa Penting */}
       <section className="bg-white py-20 px-4 md:px-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -135,8 +134,8 @@ export default function ContentFirestop() {
         </motion.div>
       </section>
 
-      {/* SECTION 3: Jenis Firestop yang Kami Kerjakan */}
-      <section className="bg-gray-50 py-20 px-4 md:px-8 max-w-6xl mx-auto">
+            {/* SECTION 3: Jenis Firestop yang Kami Kerjakan */}
+      <section className="bg-[#ba1322] py-20 px-4 md:px-8 text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -144,116 +143,242 @@ export default function ContentFirestop() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Jenis Firestop yang Kami Kerjakan
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-lg text-white/90">
             Tim kami siap menangani berbagai tipe instalasi firestop dengan metode yang sesuai standar keamanan proyek gedung & industri.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
-            <FaPlug className="text-red-600 text-3xl mt-1" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-md flex items-start gap-4">
+            <FaPlug className="text-white text-3xl mt-1" />
             <div>
-              <h3 className="font-semibold text-xl mb-1">Firestop Kabel Tray</h3>
-              <p className="text-gray-600 text-sm">Mencegah penyebaran api melalui jalur kabel antar ruangan.</p>
+              <h3 className="font-semibold text-xl mb-1 text-white">Firestop Kabel Tray</h3>
+              <p className="text-white/80 text-sm">Mencegah penyebaran api melalui jalur kabel antar ruangan.</p>
             </div>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
-            <FaWater className="text-red-600 text-3xl mt-1" />
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-md flex items-start gap-4">
+            <FaWater className="text-white text-3xl mt-1" />
             <div>
-              <h3 className="font-semibold text-xl mb-1">Firestop Pipa PVC/GI</h3>
-              <p className="text-gray-600 text-sm">Instalasi sistem proteksi pada pipa instalasi air dan gas.</p>
+              <h3 className="font-semibold text-xl mb-1 text-white">Firestop Pipa PVC/GI</h3>
+              <p className="text-white/80 text-sm">Instalasi sistem proteksi pada pipa instalasi air dan gas.</p>
             </div>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
-            <FaSnowflake className="text-red-600 text-3xl mt-1" />
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-md flex items-start gap-4">
+            <FaSnowflake className="text-white text-3xl mt-1" />
             <div>
-              <h3 className="font-semibold text-xl mb-1">Firestop Ducting AC</h3>
-              <p className="text-gray-600 text-sm">Menahan jalur penyebaran api melalui sistem pendingin ruangan.</p>
+              <h3 className="font-semibold text-xl mb-1 text-white">Firestop Ducting AC</h3>
+              <p className="text-white/80 text-sm">Menahan jalur penyebaran api melalui sistem pendingin ruangan.</p>
             </div>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
-            <FaBuilding className="text-red-600 text-3xl mt-1" />
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-md flex items-start gap-4">
+            <FaBuilding className="text-white text-3xl mt-1" />
             <div>
-              <h3 className="font-semibold text-xl mb-1">Firestop Shaft Lift & Panel Listrik</h3>
-              <p className="text-gray-600 text-sm">Perlindungan menyeluruh untuk jalur vertikal & panel sensitif.</p>
+              <h3 className="font-semibold text-xl mb-1 text-white">Firestop Shaft Lift & Panel Listrik</h3>
+              <p className="text-white/80 text-sm">Perlindungan menyeluruh untuk jalur vertikal & panel sensitif.</p>
             </div>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.03 }} className="bg-white p-6 rounded-2xl shadow-md flex items-start gap-4">
-            <FaFileAlt className="text-red-600 text-3xl mt-1" />
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-md flex items-start gap-4">
+            <FaFileAlt className="text-white text-3xl mt-1" />
             <div>
-              <h3 className="font-semibold text-xl mb-1">Sertifikasi & Dokumentasi</h3>
-              <p className="text-gray-600 text-sm">Kami siapkan dokumentasi proyek & sertifikat sesuai kebutuhan audit.</p>
+              <h3 className="font-semibold text-xl mb-1 text-white">Sertifikasi & Dokumentasi</h3>
+              <p className="text-white/80 text-sm">Kami siapkan dokumentasi proyek & sertifikat sesuai kebutuhan audit.</p>
+            </div>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.03 }} className="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-md flex items-start gap-4">
+            <FaShieldAlt className="text-white text-3xl mt-1" />
+            <div>
+              <h3 className="font-semibold text-xl mb-1 text-white">Firestop Perimeter Bangunan</h3>
+              <p className="text-white/80 text-sm">Mengamankan celah antara struktur lantai dan dinding luar dari potensi penyebaran api.</p>
             </div>
           </motion.div>
         </div>
+        <div className="text-center mt-16">
+        <a
+          href="https://wa.me/6281244997748?text=Halo%20Zen%20Workshop,%20saya%20ingin%20konsultasi%20mengenai%20instalasi%20firestop."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-white text-[#ba1322] hover:bg-[#e64a4a] hover:text-white rounded-full text-lg font-semibold shadow-lg transition"
+        >
+          <FaWhatsapp size={24} /> Konsultasi Sekarang
+        </a>
+      </div>
       </section>
+
+
 
       {/* Section 4: Keunggulan Zen Workshop di Layanan Firestop */}
         <section className="bg-white py-20 px-4 md:px-8 max-w-6xl mx-auto">
-        <motion.div
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-12"
-        >
+            className="text-center max-w-4xl mx-auto mb-12"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Keunggulan Zen Workshop di Layanan Firestop
+              Keunggulan yang bakal kamu dapatkan
             </h2>
             <p className="text-lg text-gray-600">
-            Mengapa banyak proyek mempercayakan sistem firestop mereka kepada kami? Inilah alasannya.
+              Aplikator Hilti adalah spesialis firestop terpercaya untuk berbagai proyek gedung, industri, dan infrastruktur.
+              Kami menghadirkan kombinasi keahlian teknis, material premium, dan standar kerja yang teliti, menjadikan kami pilihan utama dalam sistem proteksi kebakaran bangunan.
             </p>
-        </motion.div>
+          </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 text-lg">
-            <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl shadow"
-            >
-            <FaUserTie className="text-red-600 text-2xl mt-1" />
-            <p>Tenaga ahli bersertifikat & berpengalaman</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-gray-700 text-lg">
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-gray-50 p-6 rounded-2xl shadow flex flex-col gap-2">
+              <div className="flex items-start gap-4">
+                <FaUserTie className="text-red-600 text-2xl mt-1" />
+                <h3 className="font-semibold text-xl">Tenaga Ahli Bersertifikat</h3>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Dikerjakan oleh tim bersertifikat yang berpengalaman dalam instalasi firestop sesuai standar NFPA dan audit proteksi kebakaran bangunan.
+              </p>
             </motion.div>
 
-            <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl shadow"
-            >
-            <FaCheckCircle className="text-red-600 text-2xl mt-1" />
-            <p>Material firestop berkualitas (Hilti, 3M, dll)</p>
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-gray-50 p-6 rounded-2xl shadow flex flex-col gap-2">
+              <div className="flex items-start gap-4">
+                <FaCheckCircle className="text-red-600 text-2xl mt-1" />
+                <h3 className="font-semibold text-xl">Material Berkualitas</h3>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Kami hanya menggunakan produk firestop premium dari brand global seperti Hilti, 3M, dan Boss Fire untuk menjamin performa tahan api maksimal.
+              </p>
             </motion.div>
 
-            <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl shadow"
-            >
-            <FaFileAlt className="text-red-600 text-2xl mt-1" />
-            <p>Dokumentasi & foto laporan lengkap untuk audit</p>
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-gray-50 p-6 rounded-2xl shadow flex flex-col gap-2">
+              <div className="flex items-start gap-4">
+                <FaFileAlt className="text-red-600 text-2xl mt-1" />
+                <h3 className="font-semibold text-xl">Laporan & Dokumentasi</h3>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Setiap pekerjaan dilengkapi dokumentasi lengkap: foto before-after, data teknis, dan laporan untuk mendukung keperluan audit dan compliance.
+              </p>
             </motion.div>
 
-            <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl shadow"
-            >
-            <FaBuilding className="text-red-600 text-2xl mt-1" />
-            <p>Bisa untuk tender proyek swasta maupun BUMN</p>
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-gray-50 p-6 rounded-2xl shadow flex flex-col gap-2">
+              <div className="flex items-start gap-4">
+                <FaBuilding className="text-red-600 text-2xl mt-1" />
+                <h3 className="font-semibold text-xl">Siap Tender Proyek</h3>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Mendukung proyek swasta maupun BUMN dengan sistem administrasi rapi, dokumen legal lengkap, dan kesiapan mengikuti tender konstruksi.
+              </p>
             </motion.div>
 
-            <motion.div
-            whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-gray-50 p-6 rounded-2xl shadow"
-            >
-            <FaTools className="text-red-600 text-2xl mt-1" />
-            <p>Garansi pengerjaan rapi, tepat waktu, dan sesuai standar</p>
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-gray-50 p-6 rounded-2xl shadow flex flex-col gap-2">
+              <div className="flex items-start gap-4">
+                <FaTools className="text-red-600 text-2xl mt-1" />
+                <h3 className="font-semibold text-xl">Garansi & Akurasi</h3>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Kami menjamin hasil kerja rapi, akurat di titik penetrasi, serta sesuai standar teknis dan keselamatan proyek.
+              </p>
             </motion.div>
-        </div>
+
+            <motion.div whileHover={{ scale: 1.03 }} className="bg-gray-50 p-6 rounded-2xl shadow flex flex-col gap-2">
+              <div className="flex items-start gap-4">
+                <FaShieldAlt className="text-red-600 text-2xl mt-1" />
+                <h3 className="font-semibold text-xl">Fire Safety Teruji</h3>
+              </div>
+              <p className="text-gray-600 text-sm">
+                Sistem firestop kami terbukti efektif dalam mencegah penyebaran api dan asap, dengan hasil instalasi yang lolos uji fungsi proteksi pasif kebakaran.
+              </p>
+            </motion.div>
+          </div>
         </section>
+
+        {/* SECTION 4: Langkah Kerja Kami - Firestop */}
+        <section className="bg-white text-gray-900 py-24 px-4 md:px-8">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-12">
+              Langkah Kerja Kami
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 items-stretch text-left">
+              {/* KIRI: Gambar + Penjelasan */}
+              <div className="flex flex-col justify-between">
+                <img
+                  src={hiltiImg} // ganti dengan gambar firestop jika ada
+                  alt="Langkah kerja firestop"
+                  className="rounded-lg shadow-lg w-full h-full object-cover mb-6 max-h-[480px]"
+                />
+                <p className="text-gray-700 leading-relaxed mb-4">
+                  Proses instalasi <strong>firestop</strong> kami mengikuti standar proteksi kebakaran untuk bangunan gedung, industri, dan fasilitas umum.
+                  Setiap langkah dikerjakan oleh tenaga ahli dengan dokumentasi rapi dan penggunaan material firestop bersertifikat.
+                </p>
+                <div className="flex justify-start">
+                  <a
+                    href="https://wa.me/6281244997748?text=Halo%20saya%20tertarik%20dengan%20jasa%20instalasi%20firestop%20dari%20Zen%20Workshop"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-green-600 text-white px-6 py-3 rounded-lg text-base font-semibold transition"
+                  >
+                    <FaWhatsapp size={20} className="mb-[1px]" />
+                    Konsultasi Sekarang
+                  </a>
+                </div>
+              </div>
+
+              {/* KANAN: Langkah-langkah Firestop */}
+              <div className="grid gap-6 self-stretch">
+                {[
+                  {
+                    id: "01",
+                    title: "Survey Area 🔍",
+                    desc: "Tim kami mengecek titik penetrasi kabel, pipa, ducting, dan elemen lainnya yang membutuhkan firestop.",
+                  },
+                  {
+                    id: "02",
+                    title: "Pemilihan Material 🔧",
+                    desc: "Kami sesuaikan jenis material (sealant, board, collar, dll) berdasarkan kebutuhan proyek dan spesifikasi sistem proteksi kebakaran.",
+                  },
+                  {
+                    id: "03",
+                    title: "Pembersihan Area Instalasi 🧽",
+                    desc: "Area sekitar penetrasi dibersihkan untuk memastikan pemasangan firestop berjalan optimal dan merekat sempurna.",
+                  },
+                  {
+                    id: "04",
+                    title: "Instalasi Firestop 🔥",
+                    desc: "Firestop dipasang sesuai SOP dan teknis produsen (seperti Hilti/3M), baik untuk horizontal maupun vertikal penetrasi.",
+                  },
+                  {
+                    id: "05",
+                    title: "Finishing & Dokumentasi 📷",
+                    desc: "Setiap titik di-foto dan didokumentasikan sebagai bagian dari laporan akhir untuk audit dan compliance proyek.",
+                  },
+                ].map((step) => (
+                  <motion.div
+                    key={step.id}
+                    whileHover={{ scale: 1.03, y: -4 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                    className="bg-gray-100 text-gray-900 border border-gray-200 rounded-xl p-5 shadow-sm"
+                  >
+                    <h3 className="text-xl font-semibold flex items-center gap-3">
+                      <span className="bg-[#0D2C40] text-white font-bold px-3 py-1 rounded-full">
+                        {step.id}
+                      </span>
+                      {step.title}
+                    </h3>
+                    <p className="mt-2 text-gray-700">{step.desc}</p>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+
+
 
 {/* Section 5: Proyek Terbaru */}
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
@@ -298,105 +423,154 @@ export default function ContentFirestop() {
       </section>
 
       {/* SECTION 6: Testimoni Klien */}
-        <section className="bg-gray-50 py-20 px-4 md:px-8 max-w-6xl mx-auto">
+      <section className="bg-gray-50 py-20 px-4 md:px-8 max-w-6xl mx-auto">
         <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center max-w-3xl mx-auto mb-12"
         >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
             Testimoni Klien Kami
-            </h2>
-            <p className="text-lg text-gray-600">
-            Apa kata mereka yang sudah menggunakan layanan firestop dari Zen Workshop?
-            </p>
+          </h2>
+          <p className="text-lg text-gray-600">
+            Apa kata mereka yang sudah menggunakan layanan firestop?
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              text: "Pengerjaannya cepat, rapi, dan timnya sangat komunikatif. Proyek jadi lebih aman.",
+              name: "Pak H – Proyek Gedung Jakarta",
+            },
+            {
+              text: "Sangat membantu untuk kelengkapan dokumen tender BUMN. Lengkap & sesuai standar.",
+              name: "Bu S – Proyek Pabrik Tangerang",
+            },
+            {
+              text: "Kualitas material dan hasil pemasangan firestop-nya sangat memuaskan. Recommended!",
+              name: "PT Maju Jaya – Rumah Sakit Bekasi",
+            },
+          ].map((review, index) => (
             <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-white p-6 rounded-xl shadow-md"
+              key={index}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-6 rounded-xl shadow-md"
             >
-            <p className="text-gray-700 italic mb-4">
-                “Pengerjaannya cepat, rapi, dan timnya sangat komunikatif. Proyek jadi lebih aman.”
-            </p>
-            <p className="font-semibold text-gray-900">Pak H – Proyek Gedung Jakarta</p>
+              <div className="flex mb-3 text-yellow-400 text-lg">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <span key={i}>★</span>
+                ))}
+              </div>
+              <p className="text-gray-700 italic mb-4">“{review.text}”</p>
+              <p className="font-semibold text-gray-900">{review.name}</p>
             </motion.div>
-
-            <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-white p-6 rounded-xl shadow-md"
-            >
-            <p className="text-gray-700 italic mb-4">
-                “Sangat membantu untuk kelengkapan dokumen tender BUMN. Lengkap & sesuai standar.”
-            </p>
-            <p className="font-semibold text-gray-900">Bu S – Proyek Pabrik Tangerang</p>
-            </motion.div>
-
-            <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-white p-6 rounded-xl shadow-md"
-            >
-            <p className="text-gray-700 italic mb-4">
-                “Kualitas material dan hasil pemasangan firestop-nya sangat memuaskan. Recommended!”
-            </p>
-            <p className="font-semibold text-gray-900">PT Maju Jaya – Rumah Sakit Bekasi</p>
-            </motion.div>
+          ))}
         </div>
-        </section>
+      </section>
+
+        
 
         {/* SECTION 7: FAQ Firestop */}
-        <section className="bg-white py-20 px-4 md:px-8 max-w-6xl mx-auto">
-        <motion.div
+      <section className="bg-[#ba1322] py-24 px-4 md:px-8 text-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            className="text-3xl md:text-4xl font-bold text-center mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-12"
-        >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          >
             Pertanyaan Umum seputar Firestop
-            </h2>
-            <p className="text-lg text-gray-600">
-            Kami jawab pertanyaan yang paling sering ditanyakan klien sebelum memesan layanan firestop.
-            </p>
-        </motion.div>
+          </motion.h2>
 
-        <div className="space-y-6 max-w-4xl mx-auto">
-            {[
-            {
-                question: "Apakah wajib ada firestop di proyek saya?",
-                answer: "Ya, firestop merupakan syarat wajib untuk gedung bertingkat, rumah sakit, pabrik, dan proyek yang ingin lolos audit keselamatan kebakaran."
-            },
-            {
-                question: "Bahan yang digunakan apa?",
-                answer: "Kami menggunakan material firestop berkualitas tinggi dari merek ternama seperti Hilti, 3M, dan merek bersertifikasi lainnya."
-            },
-            {
-                question: "Apakah bisa dikerjakan malam/hari libur?",
-                answer: "Bisa. Tim kami siap bekerja di malam hari atau weekend dengan penjadwalan khusus, tanpa ganggu aktivitas proyek utama."
-            },
-            {
-                question: "Apakah bisa diberi dokumentasi audit?",
-                answer: "Tentu. Kami menyediakan laporan lengkap, foto progres, dan sertifikasi sesuai kebutuhan audit internal maupun eksternal."
-            }
-            ].map((faq, index) => (
-            <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="border border-gray-200 rounded-xl p-5 shadow-sm"
-            >
-                <h3 className="font-semibold text-lg text-gray-900 mb-2">{faq.question}</h3>
-                <p className="text-gray-700">{faq.answer}</p>
-            </motion.div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+            {/* KIRI: Konten FAQ */}
+            <div className="space-y-6">
+              {[
+                {
+                  question: "Apakah wajib ada firestop di proyek saya?",
+                  answer:
+                    "Ya, firestop merupakan syarat wajib untuk gedung bertingkat, rumah sakit, pabrik, dan proyek yang ingin lolos audit keselamatan kebakaran.",
+                },
+                {
+                  question: "Material apa yang digunakan?",
+                  answer:
+                    "Kami menggunakan material firestop berkualitas tinggi dari merek ternama seperti Hilti, 3M, dan produk bersertifikasi lainnya.",
+                },
+                {
+                  question: "Apakah bisa dikerjakan malam/hari libur?",
+                  answer:
+                    "Bisa. Tim kami siap bekerja di malam hari atau weekend dengan penjadwalan khusus, tanpa ganggu aktivitas proyek utama.",
+                },
+                {
+                  question: "Apakah ada dokumentasi untuk audit?",
+                  answer:
+                    "Tentu. Kami menyediakan laporan lengkap, foto progres, dan sertifikat jika dibutuhkan untuk audit internal maupun eksternal.",
+                },
+              ].map((faq, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white/10 backdrop-blur-md rounded-xl p-5 shadow-md"
+                >
+                  <h3 className="font-semibold text-lg text-white mb-2">
+                    {faq.question}
+                  </h3>
+                  <p className="text-white/90 text-base">{faq.answer}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* KANAN: Gambar */}
+            <div className="flex justify-center">
+              <img
+                src={alatImages}
+                alt="FAQ Firestop"
+                className="rounded-lg shadow-lg w-full max-w-sm object-cover"
+              />
+            </div>
+          </div>
         </div>
-        </section>
+      </section>
+
+      {/* Section 6: CTA Konsultasi & Booking - Jasa Firestop */}
+<section className="py-20 px-4 md:px-8 bg-white text-center text-gray-900">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.8 }}
+    className="max-w-3xl mx-auto"
+  >
+    <h2 className="text-3xl md:text-4xl font-bold mb-4">
+      Butuh Sistem Firestop yang Tersertifikasi?
+    </h2>
+    <p className="text-lg md:text-xl mb-8 text-gray-700">
+      Konsultasi Gratis untuk pemasangan firestop gedung, rumah sakit, pabrik, dan infrastruktur. Tim kami siap bantu survei lokasi, pilih material terbaik, dan siapkan dokumentasi audit 🔥<br />
+      <span className="text-sm md:text-base block mt-2 text-gray-500">
+        *Termasuk pengecekan jalur kabel, pipa, dan dokumen pendukung
+      </span>
+    </p>
+    <a
+      href="https://wa.me/6281244997748?text=Halo%20Zen%20Workshop,%20saya%20tertarik%20dengan%20layanan%20firestop%20untuk%20proyek%20saya."
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#ba1322] text-white hover:bg-[#e64a4a] rounded-full text-lg font-semibold shadow-lg transition"
+    >
+      <FaWhatsapp size={24} />
+      Konsultasi via WhatsApp
+    </a>
+  </motion.div>
+</section>
+
+
+
 
         {/* SECTION 9: SEO & Lokasi Layanan */}
         <section className="bg-gray-50 py-20 px-4 md:px-8 max-w-6xl mx-auto">
@@ -411,7 +585,7 @@ export default function ContentFirestop() {
             Layanan Firestop Bersertifikat – Jabodetabek & Bandung
             </h2>
             <p className="text-lg text-gray-700 mb-6">
-            Zen Workshop melayani jasa pemasangan firestop profesional untuk berbagai kebutuhan proyek:
+            Aplikator Hilti Melayanai jasa pemasangan firestop profesional untuk berbagai kebutuhan proyek:
             </p>
             <ul className="text-left list-disc list-inside text-gray-700 text-base md:text-lg mb-6">
             <li><strong>Firestop kabel dan pipa</strong> di gedung baru maupun renovasi</li>

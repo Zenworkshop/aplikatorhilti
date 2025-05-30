@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaWhatsapp, FaWater, FaBuilding, FaHome, FaArrowAltCircleDown, FaBath } from "react-icons/fa";
+import { FaWhatsapp, FaWater, FaBuilding, FaHome, FaArrowAltCircleDown, FaBath, FaTools } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import waterproofingHero from "../assets/HILTI/ca3.png"; // Gambar hero
+import { FaStar } from "react-icons/fa";
+import waterproofingHero from "../assets/HILTI/ca5.png"; // Gambar hero
 import proyek1 from "../assets/HILTI/ca1.png";
 import proyek2 from "../assets/HILTI/ca2.png";
 import proyek3 from "../assets/HILTI/ca3.png";
@@ -18,6 +19,7 @@ import proyek12 from "../assets/HILTI/ca12.png";
 import proyek13 from "../assets/HILTI/ca13.png";
 import proyek14 from "../assets/HILTI/ca14.png";
 import proyek15 from "../assets/HILTI/ca15.png";
+import alatImages from "../assets/HILTI/ca3.png";
 
 const images = [
   proyek1, proyek2, proyek3, proyek4, proyek5,
@@ -57,43 +59,39 @@ export default function ContentWaterproofing() {
 
   return (
     <>
-      {/* SECTION 1: Hero */}
-      <section className="bg-gradient-to-r from-blue-800 to-blue-900 text-white py-20 px-4 md:px-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+      {/* SECTION 1: HERO - Jasa Waterproofing */}
+        <motion.section
+          className="bg-[#ba1322] text-white py-28 px-6 md:px-12 text-center"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: { opacity: 0, y: 30 },
+            visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+          }}
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
-            Jasa Waterproofing Profesional untuk Gedung & Rumah Anda
-          </h1>
-          <p className="text-lg md:text-xl mb-6">
-            Tahan bocor, lebih awet, dan dilengkapi garansi kerja
-          </p>
-          <a
-            href="https://wa.me/6281244997748?text=Halo%20Zen%20Workshop,%20saya%20ingin%20konsultasi%20tentang%20layanan%20waterproofing."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-6 py-3 bg-[#25D366] hover:bg-green-600 text-white rounded-xl shadow-lg text-lg font-semibold transition"
-          >
-            <FaWhatsapp size={24} />
-            Konsultasi via WhatsApp
-          </a>
-        </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Jasa Waterproofing Profesional & Anti Bocor
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8">
+              Layanan pelapisan anti bocor untuk dak beton, atap, kamar mandi, rooftop, dan dinding retak. Proses cepat, rapi, dan tahan lama dengan material waterproofing terbaik.
+            </p>
+            <a
+              href="https://wa.me/6281244997748?text=Halo%20saya%20tertarik%20dengan%20jasa%20waterproofing%20untuk%20proyek%20saya"
+              onClick={() => {
+                fbq("track", "Contact");
+                return gtag_report_conversion("https://wa.me/6281244997748");
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 bg-white text-[#ba1322] hover:bg-[#e64a4a] hover:text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg transition"
+            >
+              <FaWhatsapp size={24} /> Konsultasi Gratis via WhatsApp
+            </a>
+          </div>
+        </motion.section>
 
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="rounded-2xl overflow-hidden shadow-xl"
-        >
-          <img
-            src={waterproofingHero}
-            alt="Ilustrasi Jasa Waterproofing"
-            className="w-full h-auto object-cover"
-          />
-        </motion.div>
-      </section>
 
       {/* SECTION 2: Kenapa Waterproofing Itu Penting */}
       <section className="bg-white py-20 px-4 md:px-8 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -133,49 +131,71 @@ export default function ContentWaterproofing() {
       </section>
 
       {/* SECTION 3: Area Layanan Waterproofing */}
-      <section className="bg-gray-50 py-20 px-4 md:px-8 max-w-6xl mx-auto">
+      <section className="bg-[#ba1322] py-20 px-4 md:px-8 text-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center max-w-3xl mx-auto mb-12"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Area Layanan Waterproofing
           </h2>
-          <p className="text-lg text-gray-600">
-            Kami melayani berbagai kebutuhan waterproofing di area penting bangunan.
+          <p className="text-lg text-white/90 max-w-3xl mx-auto">
+            Kami melayani berbagai kebutuhan pelapisan anti bocor untuk area-area penting bangunan, cocok untuk gedung bertingkat, rumah tinggal, hingga fasilitas industri.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-gray-700 text-lg">
-          <motion.div whileHover={{ scale: 1.03 }} className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
-            <FaBuilding className="text-blue-700 text-2xl mt-1" />
-            <p>Atap Beton</p>
-          </motion.div>
-
-          <motion.div whileHover={{ scale: 1.03 }} className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
-            <FaHome className="text-blue-700 text-2xl mt-1" />
-            <p>Dinding Luar</p>
-          </motion.div>
-
-          <motion.div whileHover={{ scale: 1.03 }} className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
-            <FaWater className="text-blue-700 text-2xl mt-1" />
-            <p>Balkon / Teras</p>
-          </motion.div>
-
-          <motion.div whileHover={{ scale: 1.03 }} className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
-            <FaArrowAltCircleDown className="text-blue-700 text-2xl mt-1" />
-            <p>Basement / Lantai Bawah Tanah</p>
-          </motion.div>
-
-          <motion.div whileHover={{ scale: 1.03 }} className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow">
-            <FaBath className="text-blue-700 text-2xl mt-1" />
-            <p>Kamar Mandi & Area Lembap</p>
-          </motion.div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 text-white text-lg">
+          {[
+            {
+              icon: <FaBuilding className="text-white text-2xl mt-1" />,
+              title: "Atap Beton",
+              desc: "Solusi waterproofing dak beton agar tahan terhadap hujan dan perubahan cuaca ekstrem."
+            },
+            {
+              icon: <FaHome className="text-white text-2xl mt-1" />,
+              title: "Dinding Luar",
+              desc: "Mencegah rembesan air dari luar yang dapat merusak estetika dan kekuatan struktur bangunan."
+            },
+            {
+              icon: <FaWater className="text-white text-2xl mt-1" />,
+              title: "Balkon / Teras",
+              desc: "Melindungi balkon dan teras dari genangan air yang berpotensi bocor ke area bawah."
+            },
+            {
+              icon: <FaArrowAltCircleDown className="text-white text-2xl mt-1" />,
+              title: "Basement / Lantai Bawah",
+              desc: "Mencegah masuknya air tanah dan tekanan hidrostatik di area basement dan kolong bangunan."
+            },
+            {
+              icon: <FaBath className="text-white text-2xl mt-1" />,
+              title: "Kamar Mandi & Area Lembap",
+              desc: "Memberikan perlindungan maksimal pada kamar mandi, toilet, dan area basah lainnya."
+            },
+            {
+              icon: <FaTools className="text-white text-2xl mt-1" />,
+              title: "Retakan Struktur & Sambungan Beton",
+              desc: "Penanganan retak halus dan sambungan beton agar tidak menjadi jalur masuk air."
+            },
+          ].map((item, idx) => (
+            <motion.div
+              key={idx}
+              whileHover={{ scale: 1.03 }}
+              className="flex items-start gap-4 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow"
+            >
+              {item.icon}
+              <div>
+                <h3 className="font-semibold">{item.title}</h3>
+                <p className="text-white/90 text-sm">{item.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </section>
+
+
 
             {/* SECTION 4: Metode & Material yang Digunakan */}
       <section className="bg-white py-20 px-4 md:px-8 max-w-6xl mx-auto">
@@ -190,7 +210,7 @@ export default function ContentWaterproofing() {
             Metode & Material yang Digunakan
           </h2>
           <p className="text-lg text-gray-600">
-            Kami menggunakan metode waterproofing terbaik yang disesuaikan dengan kondisi dan kebutuhan area kerja.
+            Kami menerapkan metode terbaik sesuai kondisi lapangan—untuk hasil waterproofing yang tahan lama dan efektif.
           </p>
         </motion.div>
 
@@ -199,7 +219,9 @@ export default function ContentWaterproofing() {
             <div className="text-blue-700 text-2xl mt-1">🛡️</div>
             <div>
               <h3 className="font-semibold text-xl mb-1">Coating Polyurethane</h3>
-              <p className="text-sm text-gray-600">Lapisan elastis tahan air yang cocok untuk atap dan permukaan terbuka.</p>
+              <p className="text-sm text-gray-600">
+                Waterproofing elastis untuk atap beton dan area terbuka, tahan cuaca & sinar UV.
+              </p>
             </div>
           </motion.div>
 
@@ -207,7 +229,9 @@ export default function ContentWaterproofing() {
             <div className="text-blue-700 text-2xl mt-1">🔥</div>
             <div>
               <h3 className="font-semibold text-xl mb-1">Membrane Bakar</h3>
-              <p className="text-sm text-gray-600">Material berbahan bitumen yang dipanaskan dan ditempelkan, ideal untuk dak & rooftop.</p>
+              <p className="text-sm text-gray-600">
+                Lapisan anti bocor bitumen untuk dak & rooftop, awet dan kuat terhadap genangan air.
+              </p>
             </div>
           </motion.div>
 
@@ -215,7 +239,9 @@ export default function ContentWaterproofing() {
             <div className="text-blue-700 text-2xl mt-1">🧱</div>
             <div>
               <h3 className="font-semibold text-xl mb-1">Cementitious Coating</h3>
-              <p className="text-sm text-gray-600">Solusi berbasis semen untuk area basah seperti kamar mandi dan basement.</p>
+              <p className="text-sm text-gray-600">
+                Solusi pelapis berbasis semen untuk dinding kamar mandi, basement, dan area lembap.
+              </p>
             </div>
           </motion.div>
 
@@ -223,14 +249,17 @@ export default function ContentWaterproofing() {
             <div className="text-blue-700 text-2xl mt-1">💧</div>
             <div>
               <h3 className="font-semibold text-xl mb-1">Injeksi Anti Bocor</h3>
-              <p className="text-sm text-gray-600">Suntikan material khusus ke retakan dinding untuk menghentikan rembesan air secara presisi.</p>
+              <p className="text-sm text-gray-600">
+                Injeksi tekanan tinggi ke celah beton untuk mengatasi rembesan secara akurat dan tahan lama.
+              </p>
             </div>
           </motion.div>
         </div>
       </section>
 
-            {/* SECTION 5: Keunggulan Zen Workshop di Waterproofing */}
-      <section className="bg-gray-50 py-20 px-4 md:px-8 max-w-6xl mx-auto">
+
+            {/* SECTION 5: Keunggulan Jasa Waterproofing Kami */}
+      <section className="bg-[#ba1322] text-white py-20 px-4 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -238,48 +267,49 @@ export default function ContentWaterproofing() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Keunggulan Zen Workshop di Waterproofing
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Keunggulan Jasa Waterproofing Kami
           </h2>
-          <p className="text-lg text-gray-600">
-            Inilah alasan mengapa banyak proyek mempercayakan solusi anti bocor kepada kami.
+          <p className="text-lg text-white/90">
+            Kami berpengalaman menangani berbagai jenis proyek, mulai dari rumah tinggal hingga gedung bertingkat. Semua layanan dilakukan oleh tenaga profesional, dengan material terbaik dan hasil rapi tahan bocor.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-800 text-lg">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 text-white text-lg">
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow"
+            className="flex items-start gap-4 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow"
           >
-            <span className="text-blue-700 text-2xl mt-1">👷</span>
-            <p>Teknisi berpengalaman & bersertifikat</p>
+            <span className="text-white text-2xl mt-1">👷</span>
+            <p>Teknisi berpengalaman dan bersertifikat khusus waterproofing</p>
           </motion.div>
 
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow"
+            className="flex items-start gap-4 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow"
           >
-            <span className="text-blue-700 text-2xl mt-1">🧪</span>
-            <p>Material berkualitas & sesuai standar proyek</p>
+            <span className="text-white text-2xl mt-1">🧪</span>
+            <p>Menggunakan material premium tahan bocor seperti membrane, PU, dan semen khusus</p>
           </motion.div>
 
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow"
+            className="flex items-start gap-4 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow"
           >
-            <span className="text-blue-700 text-2xl mt-1">⚡</span>
-            <p>Pengerjaan cepat & rapi</p>
+            <span className="text-white text-2xl mt-1">⚡</span>
+            <p>Pengerjaan cepat, rapi, dan minim gangguan ke aktivitas proyek</p>
           </motion.div>
 
           <motion.div
             whileHover={{ scale: 1.03 }}
-            className="flex items-start gap-4 bg-white p-6 rounded-2xl shadow"
+            className="flex items-start gap-4 bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow"
           >
-            <span className="text-blue-700 text-2xl mt-1">🏢</span>
-            <p>Bisa untuk proyek gedung & rumah pribadi</p>
+            <span className="text-white text-2xl mt-1">🏢</span>
+            <p>Bisa untuk rumah tinggal, gedung kantor, hotel, pabrik, hingga infrastruktur besar</p>
           </motion.div>
         </div>
       </section>
+
 
       {/* SECTION 6: Proyek Terbaru */}
       <section className="py-16 px-4 md:px-8 max-w-6xl mx-auto">
@@ -346,115 +376,162 @@ export default function ContentWaterproofing() {
       </section>
 
       {/* SECTION 6: Testimoni Klien */}
-      <section className="bg-white py-20 px-4 md:px-8 max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Testimoni Klien Kami
-          </h2>
-          <p className="text-lg text-gray-600">
-            Beberapa klien yang puas dengan hasil kerja waterproofing dari Zen Workshop:
-          </p>
-        </motion.div>
-
-        <div className="grid gap-6 md:grid-cols-2 text-gray-700">
+        <section className="bg-white py-20 px-4 md:px-8 max-w-4xl mx-auto">
           <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-gray-100 p-6 rounded-xl shadow"
-          >
-            <p className="text-lg italic">“Pengerjaannya cepat dan rapi. Sudah 6 bulan tidak ada bocor lagi.”</p>
-            <p className="mt-4 font-semibold text-sm text-gray-500">– Ibu Lina, Proyek Rumah Pribadi di Depok</p>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-gray-100 p-6 rounded-xl shadow"
-          >
-            <p className="text-lg italic">“Teknisi profesional, hasilnya bersih dan detail. Recommended!”</p>
-            <p className="mt-4 font-semibold text-sm text-gray-500">– Pak Hendra, Proyek Kantor Jakarta Timur</p>
-          </motion.div>
-
-          <motion.div
-            whileHover={{ scale: 1.02 }}
-            className="bg-gray-100 p-6 rounded-xl shadow md:col-span-2"
-          >
-            <p className="text-lg italic">“Sesuai janji, garansi diberikan dan hasil tahan hujan besar. Terima kasih tim Zen!”</p>
-            <p className="mt-4 font-semibold text-sm text-gray-500">– Bapak Rudi, Proyek Gudang di Bekasi</p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* SECTION 7: FAQ Waterproofing */}
-        <section className="bg-white py-20 px-4 md:px-8 max-w-6xl mx-auto">
-        <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center max-w-3xl mx-auto mb-12"
-        >
+            className="text-center mb-12"
+          >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Pertanyaan Umum tentang Waterproofing
+              Testimoni Klien Kami
             </h2>
             <p className="text-lg text-gray-600">
-            Beberapa hal penting yang sering ditanyakan klien kami.
+              Beberapa klien yang puas dengan hasil kerja waterproofing dari Zen Workshop:
             </p>
-        </motion.div>
+          </motion.div>
 
-        <div className="space-y-6 text-lg text-gray-800 max-w-3xl mx-auto">
-            <motion.div whileHover={{ scale: 1.02 }} className="bg-gray-50 p-5 rounded-2xl shadow">
-            <h3 className="font-semibold mb-2">Berapa lama proses pengerjaan?</h3>
-            <p>Lama pengerjaan tergantung luas area, umumnya 1–3 hari kerja.</p>
+          <div className="grid gap-6 md:grid-cols-2 text-gray-700">
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-gray-100 p-6 rounded-xl shadow"
+            >
+              <div className="flex gap-1 text-yellow-400 text-lg mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <p className="text-lg italic">“Pengerjaannya cepat dan rapi. Sudah 6 bulan tidak ada bocor lagi.”</p>
+              <p className="mt-4 font-semibold text-sm text-gray-500">– Ibu Lina, Proyek Rumah Pribadi di Depok</p>
             </motion.div>
 
-            <motion.div whileHover={{ scale: 1.02 }} className="bg-gray-50 p-5 rounded-2xl shadow">
-            <h3 className="font-semibold mb-2">Apakah ada garansi?</h3>
-            <p>Ya, kami memberikan garansi hingga 1 tahun tergantung jenis pekerjaan dan material.</p>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-gray-100 p-6 rounded-xl shadow"
+            >
+              <div className="flex gap-1 text-yellow-400 text-lg mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <p className="text-lg italic">“Teknisi profesional, hasilnya bersih dan detail. Recommended!”</p>
+              <p className="mt-4 font-semibold text-sm text-gray-500">– Pak Hendra, Proyek Kantor Jakarta Timur</p>
             </motion.div>
 
-            <motion.div whileHover={{ scale: 1.02 }} className="bg-gray-50 p-5 rounded-2xl shadow">
-            <h3 className="font-semibold mb-2">Bisa dikerjakan saat musim hujan?</h3>
-            <p>Bisa, dengan pengaturan jadwal dan perlindungan area kerja dari air hujan.</p>
+            <motion.div
+              whileHover={{ scale: 1.02 }}
+              className="bg-gray-100 p-6 rounded-xl shadow md:col-span-2"
+            >
+              <div className="flex gap-1 text-yellow-400 text-lg mb-2">
+                {[...Array(5)].map((_, i) => (
+                  <FaStar key={i} />
+                ))}
+              </div>
+              <p className="text-lg italic">“Sesuai janji, garansi diberikan dan hasil tahan hujan besar. Terima kasih tim Zen!”</p>
+              <p className="mt-4 font-semibold text-sm text-gray-500">– Bapak Rudi, Proyek Gudang di Bekasi</p>
             </motion.div>
-
-            <motion.div whileHover={{ scale: 1.02 }} className="bg-gray-50 p-5 rounded-2xl shadow">
-            <h3 className="font-semibold mb-2">Apakah harus mengupas dinding lama?</h3>
-            <p>Tergantung kondisi permukaan. Kami akan survei dulu untuk menentukan metode terbaik.</p>
-            </motion.div>
-        </div>
+          </div>
         </section>
 
-        {/* SECTION 8: CTA Akhir */}
-        <section className="bg-blue-800 text-white py-20 px-4 md:px-8 max-w-6xl mx-auto text-center rounded-t-3xl">
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
+
+      {/* SECTION 7: FAQ Waterproofing */}
+        <section className="bg-[#ba1322] py-24 px-4 md:px-8 text-white">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-center mb-12"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              Pertanyaan Umum seputar Waterproofing
+            </motion.h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+              {/* KIRI: Konten FAQ */}
+              <div className="space-y-6">
+                {[
+                  {
+                    question: "Apa itu jasa waterproofing dan kenapa penting?",
+                    answer:
+                      "Waterproofing adalah perlindungan bangunan dari kebocoran air. Penting untuk mencegah kerusakan struktur, jamur, dan meningkatkan usia bangunan.",
+                  },
+                  {
+                    question: "Area mana saja yang perlu dilapisi waterproofing?",
+                    answer:
+                      "Umumnya dilakukan pada atap beton, dinding luar, balkon, kamar mandi, dan basement. Area lembap sangat rentan bocor tanpa perlindungan ini.",
+                  },
+                  {
+                    question: "Apakah bisa waterproofing tanpa membongkar lantai/dinding?",
+                    answer:
+                      "Bisa. Kami memiliki metode yang fleksibel, seperti injeksi atau coating, tergantung dari kondisi area dan permukaan yang ingin dilindungi.",
+                  },
+                  {
+                    question: "Berapa lama proses pengerjaannya?",
+                    answer:
+                      "Rata-rata 1–3 hari kerja, tergantung luas area dan jenis metode waterproofing yang dipilih. Kami juga menyediakan layanan cepat jika dibutuhkan.",
+                  },
+                ].map((faq, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white/10 backdrop-blur-md rounded-xl p-5 shadow-md"
+                  >
+                    <h3 className="font-semibold text-lg text-white mb-2">
+                      {faq.question}
+                    </h3>
+                    <p className="text-white/90 text-base">{faq.answer}</p>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* KANAN: Gambar */}
+              <div className="flex justify-center">
+                <img
+                  src={alatImages}
+                  alt="FAQ Waterproofing"
+                  className="rounded-lg shadow-lg w-full max-w-sm object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 6: CTA Konsultasi & Booking - Jasa Waterproofing */}
+        <section className="py-20 px-4 md:px-8 bg-white text-center text-gray-900">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="max-w-2xl mx-auto"
-        >
+            className="max-w-3xl mx-auto"
+          >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Butuh Solusi Waterproofing sekarang?
+              Bingung Atasi Rembesan atau Bocor di Bangunan?
             </h2>
-            <p className="text-lg md:text-xl mb-8">
-            Kami siap bantu dari survei hingga garansi. Konsultasi gratis & bisa langsung booking jadwal pengerjaan!
+            <p className="text-lg md:text-xl mb-8 text-gray-700">
+              Konsultasi Gratis untuk solusi waterproofing atap, dinding, kamar mandi, basement, dan area rentan bocor lainnya. Kami bantu survei, analisa kebutuhan, dan rekomendasi metode paling efektif 💧<br />
+              <span className="text-sm md:text-base block mt-2 text-gray-500">
+                *Termasuk estimasi biaya dan pengecekan kondisi permukaan
+              </span>
             </p>
             <a
-            href="https://wa.me/6281244997748?text=Halo%20Zen%20Workshop,%20saya%20ingin%20booking%20jadwal%20untuk%20layanan%20waterproofing."
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-green-600 text-white rounded-2xl shadow-xl text-xl font-semibold transition"
+              href="https://wa.me/6281244997748?text=Halo%20Zen%20Workshop,%20saya%20tertarik%20dengan%20layanan%20waterproofing%20untuk%20bangunan%20saya."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#ba1322] text-white hover:bg-[#e64a4a] rounded-full text-lg font-semibold shadow-lg transition"
             >
-            <FaWhatsapp size={28} />
-            Konsultasi & Booking via WhatsApp
+              <FaWhatsapp size={24} />
+              Konsultasi via WhatsApp
             </a>
-        </motion.div>
+          </motion.div>
         </section>
+
+
 
         {/* SECTION 9: SEO & Lokasi Layanan */}
         <section className="bg-white py-20 px-4 md:px-8 max-w-6xl mx-auto">
