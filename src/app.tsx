@@ -42,13 +42,6 @@ function App() {
           <Route path="/fire-stop" element={<FireStop />} />
           <Route path="/water-proofing" element={<WaterProofing />} />
 
-
-
-
-
-
-
-    
         </Routes>
         <SocialButtons />
       </div>

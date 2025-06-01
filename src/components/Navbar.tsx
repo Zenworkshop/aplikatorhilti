@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaYoutube, FaInstagram, FaWhatsapp, FaTiktok, FaChevronDown } from "react-icons/fa";
 import { MdOutlineMail, MdAccessTime } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
-import logo from "../assets/logo_zen_darkblue.png";
+import logo from "../assets/LOGOHILTI.png";
 
 export default function Navbar() {
   const location = useLocation();
@@ -26,7 +26,7 @@ export default function Navbar() {
           </a>
           <a href="mailto:zenworkshopid@gmail.com" className="flex items-center space-x-2 hover:text-gray-300 transition">
             <MdOutlineMail />
-            <span>zenworkshopid@gmail.com</span>
+            <span>aplikatorhilti@gmail.com</span>
           </a>
         </div>
         <div className="flex space-x-4">
