@@ -110,12 +110,12 @@ export default function Navbar() {
             <div>
               <p className="text-base font-medium mb-2">Layanan</p>
               <div className="ml-4 mt-2 flex flex-col space-y-2">
-                <Link to="/jenis-jendela" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Chemical Anchor</Link>
-                <Link to="/sliding-door" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Chemical Rebar</Link>
-                <Link to="/partisi-kaca" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Tes Tarik (Pull Out Test)</Link>
-                <Link to="/pintulipat-aluminium" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Coring Lantai dan Dinding Beton</Link>
-                <Link to="/pintu-floorhinge" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Firestop</Link>
-                <Link to="/kanopi-kaca" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Waterproofing</Link>
+                <Link to="/chemical-anchor" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Chemical Anchor</Link>
+                <Link to="/chemical-rebar" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Chemical Rebar</Link>
+                <Link to="/pull-out-test" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Tes Tarik (Pull Out Test)</Link>
+                <Link to="/coring-lantai" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Coring Lantai dan Dinding Beton</Link>
+                <Link to="/fire-stop" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Firestop</Link>
+                <Link to="/water-proofing" className="text-sm" onClick={() => setIsOpen(false)}>Jasa Waterproofing</Link>
               </div>
             </div>
 
