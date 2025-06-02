@@ -4,7 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaYoutube, FaInstagram, FaWhatsapp, FaTiktok, FaChevronDown } from "react-icons/fa";
 import { MdOutlineMail, MdAccessTime } from "react-icons/md";
 import { FiPhone } from "react-icons/fi";
-import logo from "../assets/LOGOHILTI.png";
+import logo from "../assets/logohilti.png";
 
 export default function Navbar() {
   const location = useLocation();
